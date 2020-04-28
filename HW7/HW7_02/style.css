@@ -1,0 +1,12 @@
+.container{
+    width: 100%;
+}
+
+li{
+    list-style: none;
+}
+
+li:nth-child(4n+1){
+    color: red;
+    font-weight: 600;
+}
