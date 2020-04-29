@@ -61,7 +61,7 @@ function addPurchase(arr) {
         }
     }
     if (triger == true) {
-        arr.push({ "item": `${item}`, "count": `${count}`, "status": false });
+        arr.push({ "item": `${item}`, "count": count, "status": false });
     }
     listPrint(arr);
 }

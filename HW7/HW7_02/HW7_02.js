@@ -53,8 +53,9 @@ function change(arr) {
 
 function sum(arr) {
     let sum = 0;
+
     for (let i = 0; i < arr.length; i++) {
-        sum += arr[i].cost;
+        sum += arr[i].count * arr[i].cost;
     }
     document.getElementById('box1').innerHTML = `Сумма ваших покупок составляяет - ${sum} &#8372`;
 }
@@ -64,7 +65,7 @@ function sum(arr) {
 function biggest(arr) {
     let biggest = [];
     for (let i = 0; i < arr.length; i++) {
-        biggest.push(arr[i].cost);
+        biggest.push(arr[i].count * arr[i].cost);
     }
     document.getElementById('box1').innerHTML = `Самя дорогая покупка - ${Math.max(...biggest)} &#8372`;
 }
@@ -72,11 +73,10 @@ function biggest(arr) {
 // - Подсчет средней стоимости одного товара в чеке.
 
 function average(arr) {
-    let total = 0,
-        cost = 0;
+    let cost = 0;
     for (let i = 0; i < arr.length; i++) {
-        total += i;
-        cost += arr[i].cost;
+        cost += arr[i].count * arr[i].cost;
     }
-    document.getElementById('box1').innerHTML = `Средняя стоимость товара в чеке - ${(cost / total).toFixed(2)} &#8372`;
+    cost /= arr.length;
+    document.getElementById('box1').innerHTML = `Средняя стоимость товара в чеке - ${cost.toFixed(2)} &#8372`;
 }
